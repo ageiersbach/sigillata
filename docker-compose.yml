@@ -1,0 +1,11 @@
+version: '3'
+services:
+  rails:
+    build: .
+    command: rails server -b 0.0.0.0
+    entrypoint: /app/docker-startup.sh
+    volumes:
+      - .:/app
+      - /usr/local/bundle
+    ports:
+      - "3000:3000"

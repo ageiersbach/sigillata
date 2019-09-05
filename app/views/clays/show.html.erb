@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @clay.name %>
+</p>
+
+<p>
+  <strong>Cone:</strong>
+  <%= @clay.cone %>
+</p>
+
+<%= link_to 'Edit', edit_clay_path(@clay) %> |
+<%= link_to 'Back', clays_path %>

@@ -1,0 +1,27 @@
+<%= form_with(model: clay, local: true) do |form| %>
+  <% if clay.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(clay.errors.count, "error") %> prohibited this clay from being saved:</h2>
+
+      <ul>
+        <% clay.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cone %>
+    <%= form.text_field :cone %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
