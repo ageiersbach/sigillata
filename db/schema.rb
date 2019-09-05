@@ -10,11 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_181844) do
+ActiveRecord::Schema.define(version: 2019_09_05_183752) do
 
   create_table "clays", force: :cascade do |t|
     t.string "name"
     t.string "cone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "glaze_materials", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pots", force: :cascade do |t|
+    t.boolean "finished"
+    t.integer "inventory_status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

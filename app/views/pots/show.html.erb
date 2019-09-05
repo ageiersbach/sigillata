@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Finished:</strong>
+  <%= @pot.finished %>
+</p>
+
+<p>
+  <strong>Inventory status:</strong>
+  <%= @pot.inventory_status %>
+</p>
+
+<%= link_to 'Edit', edit_pot_path(@pot) %> |
+<%= link_to 'Back', pots_path %>
