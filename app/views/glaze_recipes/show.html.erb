@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @glaze_recipe.name %>
+</p>
+
+<p>
+  <strong>Abbreviation:</strong>
+  <%= @glaze_recipe.abbreviation %>
+</p>
+
+<%= link_to 'Edit', edit_glaze_recipe_path(@glaze_recipe) %> |
+<%= link_to 'Back', glaze_recipes_path %>

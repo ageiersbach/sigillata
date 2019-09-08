@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :glaze_recipes
   resources :pots
   resources :glaze_materials
   root to: 'home#index'

@@ -1,0 +1,2 @@
+class GlazeRecipe < ApplicationRecord
+end
