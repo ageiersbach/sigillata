@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  glaze_recipe: one
+  specifc_gravity: MyString
+  float: MyString
+  notes: MyText
+
+two:
+  glaze_recipe: two
+  specifc_gravity: MyString
+  float: MyString
+  notes: MyText
