@@ -11,12 +11,15 @@
 
   <body>
     <nav>
-      <h1><%= link_to "Sigillata" %></h1>
+      <h1><%= link_to "Sigillata", root_path %></h1>
       <ul>
-        <li><%= link_to "Clays", controller: "clays" %></li>
-        <li><%= link_to "Glaze Materials", controller: "glaze_materials" %></li>
-        <li><%= link_to "Glaze Recipes", controller: "glaze_recipes" %></li>
-        <li><%= link_to "Pots", controller: "pots" %></li>
+        <li><%= link_to "Clays", clays_path, class: (controller_name == "clays" ? 'active' : '') %></li>
+        <li><%= link_to "Glaze Materials", glaze_materials_path,
+          class: (controller_name == "glaze_materials" ? 'active' : '') %></li>
+        <li><%= link_to "Glaze Recipes", glaze_recipes_path,
+          class: (controller_name == "glaze_recipes" ? 'active' : '') %></li>
+        <li><%= link_to "Pots", pots_path,
+          class: (controller_name == "pots" ? 'active' : '') %></li>
       </ul>
     </nav>
     <%= yield %>

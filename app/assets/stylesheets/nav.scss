@@ -17,4 +17,12 @@ nav {
     }
   }
 
+  a {
+    text-decoration: none;
+  }
+
+  a.active {
+    color: red;
+  }
+
 }
