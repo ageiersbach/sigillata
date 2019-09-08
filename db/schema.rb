@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_08_033315) do
+ActiveRecord::Schema.define(version: 2019_09_08_034327) do
 
   create_table "clays", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(version: 2019_09_08_033315) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "glaze_recipe_ingredients", force: :cascade do |t|
+    t.integer "glaze_material_id", null: false
+    t.integer "glaze_recipe_version_id", null: false
+    t.integer "amount"
+    t.boolean "additive"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["glaze_material_id"], name: "index_glaze_recipe_ingredients_on_glaze_material_id"
+    t.index ["glaze_recipe_version_id"], name: "index_glaze_recipe_ingredients_on_glaze_recipe_version_id"
   end
 
   create_table "glaze_recipe_versions", force: :cascade do |t|
@@ -48,5 +59,7 @@ ActiveRecord::Schema.define(version: 2019_09_08_033315) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "glaze_recipe_ingredients", "glaze_materials"
+  add_foreign_key "glaze_recipe_ingredients", "glaze_recipe_versions"
   add_foreign_key "glaze_recipe_versions", "glaze_recipes"
 end
