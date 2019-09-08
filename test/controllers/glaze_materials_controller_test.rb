@@ -2,7 +2,7 @@ require 'test_helper'
 
 class GlazeMaterialsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @glaze_material = glaze_materials(:one)
+    @glaze_material = glaze_materials(:three)
   end
 
   test "should get index" do

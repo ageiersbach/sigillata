@@ -2,12 +2,10 @@
 
 one:
   glaze_recipe: one
-  specifc_gravity: MyString
-  float: MyString
+  specific_gravity: 2.1
   notes: MyText
 
 two:
   glaze_recipe: two
-  specifc_gravity: MyString
-  float: MyString
+  specific_gravity: 3.4
   notes: MyText
