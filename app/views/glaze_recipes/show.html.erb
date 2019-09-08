@@ -1,14 +1,7 @@
 <p id="notice"><%= notice %></p>
+<h1> <%= @glaze_recipe.name %> (<%= @glaze_recipe.abbreviation %>)</h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @glaze_recipe.name %>
-</p>
-
-<p>
-  <strong>Abbreviation:</strong>
-  <%= @glaze_recipe.abbreviation %>
-</p>
+<%= render partial: "glaze_recipe_version", collection: @glaze_recipe_versions %>
 
 <%= link_to 'Edit', edit_glaze_recipe_path(@glaze_recipe) %> |
 <%= link_to 'Back', glaze_recipes_path %>

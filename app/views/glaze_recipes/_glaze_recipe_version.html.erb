@@ -1,0 +1,34 @@
+<div id="glaze_recipe_version_<%=glaze_recipe_version_counter %>" class="glaze_recipe_version">
+
+  Version <%= glaze_recipe_version_counter %>
+
+  <p class="specific-gravity">
+    Specific Gravity: <%= glaze_recipe_version.specific_gravity %>
+  </p>
+
+  <p class="notes">
+    <%= glaze_recipe_version.notes %>
+  </p>
+
+  <h3>Ingredients:</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Amount/100</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% glaze_recipe_version.glaze_recipe_ingredients.each do |gri| %>
+        <tr>
+          <td><%= gri.name %></td>
+          <td><%= gri.amount %>></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <button>Add Ingredient</button>
+</div>
