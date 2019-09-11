@@ -20,15 +20,27 @@
       </tr>
     </thead>
 
-    <tbody>
-      <% glaze_recipe_version.glaze_recipe_ingredients.each do |gri| %>
-        <tr>
-          <td><%= gri.name %></td>
-          <td><%= gri.amount %>></td>
-        </tr>
-      <% end %>
-    </tbody>
+
+    <% if glaze_recipe_version.glaze_recipe_ingredients.empty? %>
+      No Ingredients. <%= link_to "Add Ingredients", new_glaze_recipe_glaze_recipe_version_path(@glaze_recipe) %>
+
+    <% else %>
+      <tbody>
+        <% glaze_recipe_version.glaze_recipe_ingredients.each do |gri| %>
+          <tr>
+            <td><%= gri.name %></td>
+            <td><%= gri.amount %>></td>
+          </tr>
+        <% end %>
+      </tbody>
+
+      <%= link_to "Edit Ingredients", edit_glaze_recipe_glaze_recipe_version_path %>
+    <% end %>
+
+
   </table>
 
-  <button>Add Ingredient</button>
+
+
+  <button>Add Ingredients</button>
 </div>
