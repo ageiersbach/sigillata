@@ -28,13 +28,13 @@
       <tbody>
         <% glaze_recipe_version.glaze_recipe_ingredients.each do |gri| %>
           <tr>
-            <td><%= gri.name %></td>
-            <td><%= gri.amount %>></td>
+            <td><%= gri.glaze_material.name %></td>
+            <td><%= gri.amount %></td>
           </tr>
         <% end %>
       </tbody>
 
-      <%= link_to "Edit Ingredients", edit_glaze_recipe_glaze_recipe_version_path %>
+      <%= link_to "Edit Ingredients", edit_glaze_recipe_glaze_recipe_version_path(@glaze_recipe) %>
     <% end %>
 
 

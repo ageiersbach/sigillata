@@ -1,0 +1,25 @@
+<h3>New Glaze Recipe</h3>
+
+<%= form_with model: @glaze_recipe_version, url: glaze_recipe_glaze_recipe_versions_path(@glaze_recipe) do |form| %>
+  <table>
+    <thead>
+      <tr>
+        <th>Glaze Material</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @glaze_materials.each do |gm| %>
+        <tr>
+          <%= form.fields_for :glaze_recipe_ingredients, @glaze_recipe_version.glaze_recipe_ingredients.new(glaze_material: gm) do |gri| %>
+            <%= gri.hidden_field :glaze_material_id %>
+            <td><%= gm.name %></td>
+            <td><%= gri.number_field :amount %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= submit_tag("Create Recipe Version") %>
+<% end %>
