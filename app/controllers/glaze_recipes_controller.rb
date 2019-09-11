@@ -4,7 +4,7 @@ class GlazeRecipesController < ApplicationController
   # GET /glaze_recipes
   # GET /glaze_recipes.json
   def index
-    @glaze_recipes = GlazeRecipe.all
+    @glaze_recipes = GlazeRecipe.order(:name).all
   end
 
   # GET /glaze_recipes/1
