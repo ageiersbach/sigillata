@@ -20,7 +20,7 @@ class GlazeMaterialsControllerTest < ActionDispatch::IntegrationTest
       post glaze_materials_url, params: { glaze_material: { name: @glaze_material.name } }
     end
 
-    assert_redirected_to glaze_material_url(GlazeMaterial.last)
+    assert_redirected_to glaze_materials_url
   end
 
   test "should show glaze_material" do
@@ -35,7 +35,7 @@ class GlazeMaterialsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update glaze_material" do
     patch glaze_material_url(@glaze_material), params: { glaze_material: { name: @glaze_material.name } }
-    assert_redirected_to glaze_material_url(@glaze_material)
+    assert_redirected_to glaze_materials_url
   end
 
   test "should destroy glaze_material" do

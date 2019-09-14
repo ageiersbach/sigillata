@@ -20,7 +20,7 @@ class GlazeRecipesControllerTest < ActionDispatch::IntegrationTest
       post glaze_recipes_url, params: { glaze_recipe: { abbreviation: @glaze_recipe.abbreviation, name: @glaze_recipe.name } }
     end
 
-    assert_redirected_to glaze_recipe_url(GlazeRecipe.last)
+    assert_redirected_to new_glaze_recipe_glaze_recipe_version_path(GlazeRecipe.last)
   end
 
   test "should show glaze_recipe" do
