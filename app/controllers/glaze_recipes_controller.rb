@@ -10,10 +10,6 @@ class GlazeRecipesController < ApplicationController
   # GET /glaze_recipes/1
   # GET /glaze_recipes/1.json
   def show
-    if @glaze_recipe.glaze_recipe_versions.empty?
-      @glaze_recipe.glaze_recipe_versions.build
-    end
-    @glaze_recipe_versions = @glaze_recipe.glaze_recipe_versions
   end
 
   # GET /glaze_recipes/new
