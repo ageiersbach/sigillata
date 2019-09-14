@@ -4,7 +4,7 @@ class GlazeMaterialsController < ApplicationController
   # GET /glaze_materials
   # GET /glaze_materials.json
   def index
-    @glaze_materials = GlazeMaterial.all
+    @glaze_materials = GlazeMaterial.all.order(:name)
   end
 
   # GET /glaze_materials/1
@@ -28,7 +28,7 @@ class GlazeMaterialsController < ApplicationController
 
     respond_to do |format|
       if @glaze_material.save
-        format.html { redirect_to @glaze_material, notice: 'Glaze material was successfully created.' }
+        format.html { redirect_to glaze_materials_path, notice: 'Glaze material was successfully created.' }
         format.json { render :show, status: :created, location: @glaze_material }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class GlazeMaterialsController < ApplicationController
   def update
     respond_to do |format|
       if @glaze_material.update(glaze_material_params)
-        format.html { redirect_to @glaze_material, notice: 'Glaze material was successfully updated.' }
+        format.html { redirect_to glaze_materials_path, notice: 'Glaze material was successfully updated.' }
         format.json { render :show, status: :ok, location: @glaze_material }
       else
         format.html { render :edit }
