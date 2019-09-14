@@ -1,4 +1,4 @@
-<h3>New Glaze Recipe</h3>
+<h1><%= @glaze_recipe.name %>
 
 <%= form_with model: @glaze_recipe_version, url: glaze_recipe_glaze_recipe_versions_path(@glaze_recipe) do |form| %>
   <table>
@@ -21,5 +21,5 @@
       <% end %>
     </tbody>
   </table>
-  <%= submit_tag("Create Recipe Version") %>
+  <%= submit_tag("Add Version") %>
 <% end %>

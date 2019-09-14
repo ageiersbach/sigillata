@@ -32,7 +32,7 @@ class GlazeRecipesController < ApplicationController
 
     respond_to do |format|
       if @glaze_recipe.save
-        format.html { redirect_to @glaze_recipe, notice: 'Glaze recipe was successfully created.' }
+        format.html { redirect_to new_glaze_recipe_glaze_recipe_version_path(@glaze_recipe), notice: 'Glaze recipe was successfully created.' }
         format.json { render :show, status: :created, location: @glaze_recipe }
       else
         format.html { render :new }
