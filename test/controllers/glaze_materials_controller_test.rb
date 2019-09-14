@@ -17,7 +17,7 @@ class GlazeMaterialsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create glaze_material" do
     assert_difference('GlazeMaterial.count') do
-      post glaze_materials_url, params: { glaze_material: { name: @glaze_material.name } }
+      post glaze_materials_url, params: { glaze_material: { name: 'Bentonite' } }
     end
 
     assert_redirected_to glaze_materials_url
