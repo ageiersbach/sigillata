@@ -4,8 +4,10 @@ one:
   glaze_recipe: one
   specific_gravity: 2.1
   notes: MyText
+  name: 'First'
 
 two:
   glaze_recipe: two
   specific_gravity: 3.4
   notes: MyText
+  name: 'Second'

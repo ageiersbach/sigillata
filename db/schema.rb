@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_08_034327) do
+ActiveRecord::Schema.define(version: 2019_09_14_194019) do
 
   create_table "clays", force: :cascade do |t|
     t.string "name"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_09_08_034327) do
     t.text "notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
     t.index ["glaze_recipe_id"], name: "index_glaze_recipe_versions_on_glaze_recipe_id"
   end
 
