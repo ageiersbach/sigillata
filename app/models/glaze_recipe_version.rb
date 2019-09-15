@@ -4,5 +4,5 @@ class GlazeRecipeVersion < ApplicationRecord
 
   validates :name, uniqueness: { scope: :glaze_recipe }
 
-  accepts_nested_attributes_for :glaze_recipe_ingredients
+  accepts_nested_attributes_for :glaze_recipe_ingredients, allow_destroy: true, reject_if: proc {|gri| gri[:amount].blank? }
 end
