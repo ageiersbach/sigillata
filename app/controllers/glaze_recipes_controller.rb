@@ -64,7 +64,9 @@ class GlazeRecipesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_glaze_recipe
-      @glaze_recipe = GlazeRecipe.find(params[:id])
+      @glaze_recipe = GlazeRecipe.includes(:glaze_recipe_versions => {
+        :glaze_recipe_ingredients => :glaze_material
+        }).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
