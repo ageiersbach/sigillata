@@ -8,10 +8,16 @@ class GlazeRecipeVersionsController < ApplicationController
 
   def edit
     @glaze_recipe_version = GlazeRecipeVersion.find(params[:id])
+    @glaze_materials = GlazeMaterial.all.order(:name)
   end
 
   def update
-
+    @glaze_recipe_version = GlazeRecipeVersion.find(params[:id])
+    if @glaze_recipe_version.update(recipe_params)
+      redirect_to @glaze_recipe
+    else
+      render :edit
+    end
   end
 
   def create
@@ -31,6 +37,6 @@ class GlazeRecipeVersionsController < ApplicationController
   end
 
   def recipe_params
-    params.require(:glaze_recipe_version).permit(:glaze_recipe_ingredients_attributes => [:glaze_material_id, :amount])
+    params.require(:glaze_recipe_version).permit(:glaze_recipe_ingredients_attributes => [:id, :glaze_material_id, :amount])
   end
 end

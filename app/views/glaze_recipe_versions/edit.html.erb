@@ -1,2 +1,2 @@
-<h1>GlazeRecipeVersions#edit</h1>
-<p>Find me in app/views/glaze_recipe_versions/edit.html.erb</p>
+<h1><%= @glaze_recipe.name %>
+<%= render 'form', submit_path: glaze_recipe_glaze_recipe_version_path(@glaze_recipe, @glaze_recipe_version) %>

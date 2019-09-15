@@ -1,0 +1,23 @@
+<%= form_with model: @glaze_recipe_version, url: submit_path do |form| %>
+  <table>
+    <thead>
+      <tr>
+        <th>Glaze Material</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @glaze_materials.each do |gm| %>
+        <tr>
+          <%= form.fields_for :glaze_recipe_ingredients, @glaze_recipe_version.glaze_recipe_ingredients.where(glaze_material: gm).first_or_initialize do |gri| %>
+            <%= gri.hidden_field :glaze_material_id %>
+            <td><%= gm.name %></td>
+            <td><%= gri.number_field :amount %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= form.submit %>
+<% end %>
