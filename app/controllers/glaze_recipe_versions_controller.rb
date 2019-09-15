@@ -37,6 +37,13 @@ class GlazeRecipeVersionsController < ApplicationController
   end
 
   def recipe_params
-    params.require(:glaze_recipe_version).permit(:glaze_recipe_ingredients_attributes => [:id, :glaze_material_id, :amount])
+    params.require(:glaze_recipe_version).permit(
+      :name,
+      :specific_gravity,
+      :glaze_recipe_ingredients_attributes => [
+        :id,
+        :glaze_material_id,
+        :amount
+      ])
   end
 end

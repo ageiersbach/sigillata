@@ -1,4 +1,15 @@
 <%= form_with model: @glaze_recipe_version, url: submit_path do |form| %>
+  <div class="version-info">
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :specific_gravity %>
+      <%= form.number_field :specific_gravity, step: "0.1" %>
+    </div>
+  </div>
   <table>
     <thead>
       <tr>

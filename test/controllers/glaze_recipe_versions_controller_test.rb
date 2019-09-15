@@ -18,9 +18,9 @@ class GlazeRecipeVersionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update a glaze_recipe_version" do
     glaze_recipe_version = glaze_recipe_versions(:one)
-    params = { specific_gravity: 3.2 }
+    params = { glaze_recipe_version: { specific_gravity: 3.2 } }
     put glaze_recipe_glaze_recipe_version_path(@glaze_recipe, glaze_recipe_version, params)
-    assert_response :success
+    assert_redirected_to glaze_recipe_path(@glaze_recipe)
   end
 
   test "should create a new glaze_recipe_version" do
