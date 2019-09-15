@@ -1,5 +1,5 @@
 #!/bin/bash
 
 yarn install
-bundle install
+#bundle install
 exec "$@"

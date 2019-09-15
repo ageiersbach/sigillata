@@ -15,3 +15,9 @@ RUN apt-get update && apt-get -y install nodejs yarn
 RUN gem install bundler rails
 
 WORKDIR /app
+
+COPY Gemfile .
+COPY Gemfile.lock .
+
+RUN bundle install
+VOLUME /usr/local/bundle
